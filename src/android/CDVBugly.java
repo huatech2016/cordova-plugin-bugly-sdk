@@ -125,7 +125,7 @@ public class CDVBugly extends CordovaPlugin {
      private boolean setUserID(CordovaArgs args, CallbackContext callbackContext) {
         try {
             int id = args.getInt(0);
-            CrashReport.setUserID(this.cordova.getActivity().getApplicationContext(), id);
+	        CrashReport.setUserId(this.cordova.getActivity().getApplicationContext(), String.valueOf(id));
         } catch (JSONException e) {
             callbackContext.error(ERROR_INVALID_PARAMETERS);
             return true;
