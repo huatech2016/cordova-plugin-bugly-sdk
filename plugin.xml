@@ -20,14 +20,12 @@
   </js-module>
   <!-- android -->
   <platform name="android">
-    <lib-file src="src/android/libs/bugly_crash_release.jar" />
+      <framework src="com.tencent.bugly:crashreport:latest.release"/>
     <source-file src="src/android/CDVBugly.java" target-dir="src/com/jasonz/cordova/bugly" />
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
       <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
       <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-      <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-      <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <meta-data android:name="BUGLY_APPID" android:value="$ANDROID_APPID" />
